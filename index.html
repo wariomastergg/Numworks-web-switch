@@ -7,7 +7,6 @@
     <title>NumWorks graphing calculator</title>
     <style>
 .calculator {
-  scroll-snap-destination: 100%;
   position: relative;
 }
 .calculator-aspect-ratio {
@@ -364,9 +363,8 @@ body.fullscreen .col-fullscreen {
   display: block;
 }
 body.fullscreen .col-calculator {
+  width: 35%;
   float: left;
-  transform:rotate(90deg);
-  width: 100%;
 }
 a.action {
   display: block;
@@ -389,10 +387,9 @@ a.action svg {
   position: relative;
   display: inline-block;
   text-align: left;
-  transform: translate(-475px,-100px);
 }
 .calculator-container > img {
-  max-height: 1700px;
+  max-height: 92.0vh;
   max-width: 100%;
   display: block;
 }
@@ -417,9 +414,9 @@ a.action svg {
 }
     </style>
   </head>
-  <body scroll="no" style="overflow: hidden">
+  <body>
     <div class="row">
-      <div class="col-calculator" style="transform:rotate(90deg);">
+      <div class="col-calculator">
         <div class="calculator-container">
           <img src="background.jpg" alt="NumWorks Calculator">
 <div class="calculator loading">
@@ -472,16 +469,28 @@ a.action svg {
   <span data-key="51"></span>
   <span data-key="52"></span>
 </div>
-          
+          </div>
         </div>
       </div>
       <div class="col-fullscreen calculator-mirror">
         <canvas width="320" height="240"></canvas>
       </div>
     </div>
-    <script src="epsilon.js"></script>
+    <!--fullscreen button-->
+    <body>
+      <script>
+        function fullscr(){
+          document.documentElement.requestFullscreen();
+          document.GetElementById(fullscrbut).style.visibility="hidden";
+        }
+      </script>
+      <button id="fullscrbut" onClick="fullscr();">
+        Full Screen
+      <button>
+    <body>
+    <!--fullscreen button-->
+      <script src="epsilon.js"></script>
     <script>
-      document.documentElement.requestFullscreen();
 function Calculator(emModule) {
   var emModule = (typeof emModule === 'undefined') ? {} : emModule;
   var calculatorElement = emModule.element || document.querySelector('.calculator');
