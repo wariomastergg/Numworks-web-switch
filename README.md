@@ -1,5 +1,7 @@
 numworks on switch?
 
+this is th site: https://wariomastergg.github.io/Numworks-web-switch/
+
 but its the web simulator
 
 cool!
