@@ -389,6 +389,7 @@ a.action svg {
   position: relative;
   display: inline-block;
   text-align: left;
+  transform: rotate(90deg);
 }
 .calculator-container > img {
   max-height: 92.0vh;
@@ -397,10 +398,10 @@ a.action svg {
 }
 .calculator {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: -47%;
+  left: -47%;
+  width: 196%;
+  height: 196%;
 }
 .calculator-container .actions {
     position: absolute;
@@ -420,9 +421,32 @@ a.action svg {
     <div class="row">
       <div class="col-calculator">
         <div class="calculator-container">
-          <img src="background.jpg" alt="NumWorks Calculator">
+          <img src="background.png" alt="NumWorks Calculator">
 <div class="calculator loading">
   <div class="loader"><span></span></div>
+  <!--fullscreen button-->
+  <body>
+    <script>
+
+      function launchFullscreen(element){
+        if (element.requestFullscreen) {
+          element.requestFullscreen();}
+        else if (element.mozRequestFullScreen){
+         element.mozRequestFullScreen();}
+        else if (element.webkitRequestFullscreen){
+          element.webkitRequestFullscreen();}
+        else if (element.msRequestFullscreen){
+          element.msRequestFullscreen();}}
+
+      function fullscr(){
+        launchFullscreen(document.documentElement);
+      }
+    </script>
+    <button id="fullscrbut" onClick="fullscr();">
+      Full Screen
+    <button>
+  <body>
+  <!--fullscreen button-->
   <canvas tabindex="1"></canvas>
   <span data-key="0"></span>
   <span data-key="1"></span>
@@ -478,29 +502,8 @@ a.action svg {
         <canvas width="320" height="240"></canvas>
       </div>
     </div>
-    <!--fullscreen button-->
-    <body>
-      <script>
-
-        function launchFullscreen(element){
-          if (element.requestFullscreen) {
-            element.requestFullscreen();}
-          else if (element.mozRequestFullScreen){
-           element.mozRequestFullScreen();}
-          else if (element.webkitRequestFullscreen){
-            element.webkitRequestFullscreen();}
-          else if (element.msRequestFullscreen){
-            element.msRequestFullscreen();}}
-
-        function fullscr(){
-          launchFullscreen(document.documentElement);
-        }
-      </script>
-      <button id="fullscrbut" onClick="fullscr();">
-        Full Screen
-      <button>
-    <body>
-    <!--fullscreen button-->
+    
+    <script src="gamepad.js"></script>
       <script src="epsilon.js"></script>
     <script>
 function Calculator(emModule) {
